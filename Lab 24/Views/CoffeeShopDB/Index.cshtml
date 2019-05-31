@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div><b></b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      
+    </tr>
+@foreach (var item in ViewBag.ItemList)
+{
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.Description</td>
+        <td>@item.Quantity</td>
+        <td>@item.Price</td>
+        <td><a href="../CoffeeShopDB/UpdateItem?itemID=@item.Id" class="btn-default">Edit</a></td>
+        <td><a href="../CoffeeShopDB/DeleteItem?itemID=@item.Id" class="btn-default">Delete</a></td>
+    </tr>
+}
+</table>
+
+          
+    <a href="../CoffeeShopDB/AddItem">Add a new Item!</a>
+
